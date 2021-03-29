@@ -15,15 +15,30 @@ st.title("Vitals-detection")
 #st.sidebar.selectbox("Selections", options['Heart Rate'])
 
 
-if st.checkbox('Hearth Rate'):
+
+# Function construction
+left_column, right_column = st.beta_columns(2)
+pressed = left_column.button('Analize')
+if pressed:
+    right_column.write(" Render the Video Capture feature")
     st.sidebar.write(
         '''
-        Aquí se corre  pyVHR
+        This runs  pyVHR alogorithm
 
         ''',
-        pd.DataFrame({'Patient Name':["User"],'Lastname':["LastnameUser"],'Vitals':["10 bpm"]})
-        
+        # Poner los indices del dataframe como opciones  de signos
+        pd.DataFrame({'Patient Name':["User"], 'Vitals':["10 bpm"]})
+
     )
 
 
 
+
+
+
+
+
+
+
+expander = st.beta_expander("FAQ")
+expander.write("Here you could put in some long explanations about the algorithm pychv")
