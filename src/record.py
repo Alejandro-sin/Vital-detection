@@ -3,6 +3,29 @@ import pandas as pd
 import cv2
 
 
+'''
+Revisar si constuyo la clase con métodos para  modularizar
+las opciones dependientes de cv2 como métodos unificados en la clase "Caps"
+
+class Caps():
+    def __init__(self, video_capture,  close_cap, take_picture):
+        pass
+
+
+video_capture: El método de video_cap
+close_cap: Cerrar la captura del frame que se abre
+take_picture: Tomar una foto.
+
+
+
+'''
+
+
+class Caps():
+    def __init__(self, video_capture,  close_cap, take_picture):
+        pass
+
+
 def video_cap():
     capture = cv2.VideoCapture(0)
     # Encoding

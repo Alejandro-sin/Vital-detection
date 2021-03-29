@@ -39,11 +39,5 @@ stop = left_column.button('Stop')
 
 
 
-
-
-
-
-
-
 expander = st.beta_expander("FAQ")
 expander.write("Here you could put in some long explanations about the algorithm pychv")
