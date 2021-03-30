@@ -6,50 +6,60 @@ from record import video_cap
 
 
 
-
-##options = pd.DataFrame({'Heart Rate':["pPPG", "BOS"],'OKR':["LastnameUser"]})
-
-
 st.title("Vitals-detection")
 #st.sidebar.selectbox("Selections", options['Heart Rate'])
 
 
 
-# Function construction
-left_column, right_column = st.beta_columns(2)
-pressed = left_column.button('Record')
-if pressed:
-    right_column.write(" Render the Video Capture feature")
-    st.sidebar.write(
-        '''
-        This runs  pyVHR alogorithm
-
-        ''',
+def record():
+    if st.button('Record'):
         video_cap(),
-        # Poner los indices del dataframe como opciones  de signos
-        pd.DataFrame({'Patient Name':["User"], 'Vitals':["10 bpm"]})
-    )
 
-analized = left_column.button('Analize')
-stop = left_column.button('Stop')
+    if st.button('Stop'):
+        pass
 
 
 
 
-## FILE UPLOAD
+## SIDE BAR
+st.sidebar.write(
+    '''
+    ## Menu
+    Here must be and explanation about the menu bar
 
-menu = ["Home", "Upload Files", "About"]
-choice = st.sidebar.selectbox("Menu", menu)
-if choice =="Home":
-    pass
+    '''
+)
 
-elif choice =="Upload Files":
-    st.subheader("Upload Files")
-    video_file = open('./data/record.avi', 'rb')
+
+
+
+## MENU CONSTRUCTION
+menu = ["Detect symptoms","Upload Files", "Demo File","FAQ"]
+choice = st.sidebar.selectbox("",menu)
+if choice =="Upload Files":
+    st.subheader("Upload Video")
+    video_file = st.file_uploader("Upload Video")
+
+elif choice =="Demo File":
+    st.subheader("Demo File")
+    video_file = open('./data/data_test.mp4', 'rb')
     video_bytes = video_file.read()
     st.video(video_bytes)
 
+    '''
+    * La función video solo admite mp4
+    * La función admite np.arrays hasta urls.
+    * st.video("https://www.youtube.com/watch?v=9TPY2Jyyplk&t=3095s")
+
+    '''
+elif choice == "Detect symptoms":
+    record()
 
 
-expander = st.beta_expander("FAQ")
-expander.write("Here you could put in some long explanations about the algorithm pychv")
+
+elif choice == "FAQ":
+    expander = st.beta_expander("FAQ")
+    expander.write("Here you could put in some long explanations about the algorithm pychv")
+
+
+
