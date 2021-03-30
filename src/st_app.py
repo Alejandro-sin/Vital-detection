@@ -8,15 +8,20 @@ from record import video_cap
 
 st.title("Vitals-detection")
 #st.sidebar.selectbox("Selections", options['Heart Rate'])
+st.write(
+    '''
+    This demo its for...
+    To start just navigate in the menu context from the left
 
+    ''')
 
 
 def record():
     if st.button('Record'):
         video_cap(),
 
-    if st.button('Stop'):
-        pass
+
+
 
 
 
@@ -25,16 +30,14 @@ def record():
 st.sidebar.write(
     '''
     ## Menu
-    Here must be and explanation about the menu bar
+    _______________________________________________
 
     '''
 )
 
 
-
-
 ## MENU CONSTRUCTION
-menu = ["Detect symptoms","Upload Files", "Demo File","FAQ"]
+menu = ["Home","Detect vitals","Upload Files", "Demo File","FAQ"]
 choice = st.sidebar.selectbox("",menu)
 if choice =="Upload Files":
     st.subheader("Upload Video")
@@ -52,10 +55,16 @@ elif choice =="Demo File":
     * st.video("https://www.youtube.com/watch?v=9TPY2Jyyplk&t=3095s")
 
     '''
-elif choice == "Detect symptoms":
-    record()
+elif choice == "Detect vitals":
+    pr = st.checkbox("Pulse Rate")
+    oxs = st.checkbox("Oxygen Saturation")
+    bd = st.checkbox("Blood Glucose")
+    if pr:
+        st.write("To start the process of measuring HR just click the button below and wait for the magic")
+        record()
 
-
+    if oxs or bd:
+        st.write("This feature its not avaible yet")
 
 elif choice == "FAQ":
     expander = st.beta_expander("FAQ")

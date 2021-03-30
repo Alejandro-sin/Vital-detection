@@ -22,9 +22,14 @@ take_picture: Tomar una foto.
 '''
 
 
-class Caps():
-    def __init__(self, video_capture,  close_cap, take_picture):
-        pass
+def take_picture():
+    '''
+    This function taks a pictue whn the video captures ends.
+    '''
+    pass
+
+
+
 
 
 def video_cap():
@@ -36,14 +41,12 @@ def video_cap():
     out = cv2.VideoWriter('./data/record.avi',fourcc, 20.0, (640,480))
     start_time = time.time()
 
+    # Time interval
     while(int(time.time() - start_time) < capture_duration):
         ret, frame = capture.read()
-        # gray = cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY)
-        if ret ==True:
-            frame = cv2.flip(frame,0)
-            out.write(frame)
-            cv2.imshow('frame')  #('frame',gray)
-
+        gray = cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY)
+        out.write(frame)
+        cv2.imshow('Vide Capture', gray)
         if cv2.waitKey(1) & 0xFF == ord('q'):
             break
 
