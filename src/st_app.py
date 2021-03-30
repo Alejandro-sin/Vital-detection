@@ -10,7 +10,7 @@ st.title("Vitals-detection")
 #st.sidebar.selectbox("Selections", options['Heart Rate'])
 st.write(
     '''
-    This application is aimed at measuring vital signs using signal processing and techniques such as photoplestimography and deep learning.
+    This application is aimed at measuring vital signs using signal processing and techniques such as photoplestimography and deep learning. To start the magic, you can look up the context in the menu on the left and we'll walk you through it.
 
     _____________________________________________
 
@@ -20,9 +20,6 @@ st.write(
 def record():
     if st.button('Record'):
         video_cap(),
-
-
-
 
 
 
@@ -72,6 +69,8 @@ elif choice == "Detect vitals":
 elif choice == "FAQ":
     expander = st.beta_expander("FAQ")
     expander.write("Here you could put in some long explanations about the algorithm pychv")
+
+
 
 
 
