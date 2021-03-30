@@ -26,16 +26,28 @@ if pressed:
 
         ''',
         video_cap(),
-        
         # Poner los indices del dataframe como opciones  de signos
         pd.DataFrame({'Patient Name':["User"], 'Vitals':["10 bpm"]})
-
     )
 
 analized = left_column.button('Analize')
 stop = left_column.button('Stop')
 
 
+
+
+## FILE UPLOAD
+
+menu = ["Home", "Upload Files", "About"]
+choice = st.sidebar.selectbox("Menu", menu)
+if choice =="Home":
+    pass
+
+elif choice =="Upload Files":
+    st.subheader("Upload Files")
+    video_file = open('./data/record.avi', 'rb')
+    video_bytes = video_file.read()
+    st.video(video_bytes)
 
 
 
