@@ -54,15 +54,8 @@ with image_displayer:
 
 
 with data_displayer:
-    st.info('This is just nothing yet')
-
-
-
-
-
-
-
-
+    data_from_vhr =np.random.randn(10,1)
+    data_displayer.write(data_from_vhr)
 
 
 
@@ -77,6 +70,7 @@ st.sidebar.write(
 
     '''
 )
+
 
 
 ## MENU CONSTRUCTION
