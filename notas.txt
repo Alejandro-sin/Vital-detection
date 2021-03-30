@@ -1,0 +1,50 @@
+
+  ______             __    
+ /_  __/___     ____/ /___ 
+  / / / __ \   / __  / __ \
+ / / / /_/ /  / /_/ / /_/ /
+/_/  \____/   \__,_/\____/ 
+                           
+
+
+
+
+* Quiero que cuando seleccione un signo vital me desaparezca el resto de cosas. y me renderice no mas la imagen o el video embebido.
+
+* Quiero poder eliminar el return none del record buttom. Done
+
+* Poner un botoncito de feedback del tiempo.
+
+* Poner un mensaje que se puede cancelar la grabación con la letra q. Poner también a funcionar el scape.
+
+* En el drag and Drop organizar lso formatos que recibe y que rechaza.
+
+
+* Sobre clases y objetos posibles para mejorar el streamlit:
+
+________________________________________________________________________________________________
+Revisar si constuyo la clase con métodos para  modularizar
+las opciones dependientes de cv2 como métodos unificados en la clase "Caps"
+
+class Caps():
+    def __init__(self, video_capture,  close_cap, take_picture):
+        pass
+
+
+video_capture: El método de video_cap
+close_cap: Cerrar la captura del frame que se abre
+take_picture: Tomar una foto.
+__________________________________________________________________________________________________
+
+
+
+PREGUNTAS:
+
+
+* El video que sale tiene una duración de 5 segundos aproximadamente, en la función, dejé ajustable la duración de
+en ms que podría variar según las necesidades. ¿Importa poco la velocidad de reproducción del video en el análisis?
+
+
+
+
+

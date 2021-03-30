@@ -6,6 +6,25 @@ from record import video_cap
 
 
 
+
+## CONFIG STREAMLIT
+
+st.set_page_config(
+    page_title ="Vital-detection",
+    page_icon="💙",
+    layout="wide",
+    initial_sidebar_state="expanded"
+)
+
+
+
+
+
+
+
+
+
+
 st.title("Vitals-detection")
 #st.sidebar.selectbox("Selections", options['Heart Rate'])
 st.write(
@@ -25,10 +44,17 @@ def record():
 
 
 
+# CONTAINER IMAGE
 
-# CONTAINER CHART 
+image_displayer, data_displayer = st.beta_columns(2)
+
+with image_displayer:
+    st.image('./data/image.png')
 
 
+
+with data_displayer:
+    st.info('This is just nothing yet')
 
 
 
