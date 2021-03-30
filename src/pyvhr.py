@@ -1,4 +1,3 @@
-
 # -- Modules and packages to import for demo
 from pyVHR.signals.video import Video
 from pyVHR.methods.pos import POS
