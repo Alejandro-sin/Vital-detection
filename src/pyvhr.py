@@ -14,25 +14,27 @@ video = Video(videoFilename)
 
 # -- extract faces
 video.getCroppedFaces(detector='mtcnn', extractor='skvideo')
-video.printVideoInfo()
 
-print("\nShow video cropped faces, crop size:", video.cropSize)
 video.showVideo()
 
 
+# Adapt Funciotn
 # -- define ROIs: using skin, with threshold param 
 video.setMask(typeROI='skin_adapt',skinThresh_adapt=0.2)
 video.printROIInfo()
 video.showVideo()
 
 
-
+#Fix
 # -- define ROIs: using skin, with threshold param 
 video.setMask(typeROI='skin_fix',skinThresh_fix=[30, 50])
 video.printROIInfo()
 video.showVideo()
 
 
+
+
+# TUNING
 # -- define some params in the form of dict (those in the cfg file) 
 params = {"video": video, "verb":32, "ROImask":"skin_adapt", "skinAdapt":0.2}
 
@@ -42,7 +44,17 @@ m = CHROM(**params)
 
 # -- invoke the method
 bpmES, timesES = m.runOffline(**params)
-# bpmES
+bpmES  # BPM by frame  como un promedio. np.mean()
+
+
+
+
+
+
+
+
+
+"""
 
 # -- dataset object
 dataset = SAMPLE(videodataDIR="./data/record.avi", BVPdataDIR="./data/record.avi")  # ¿Que carpeta necesito?
@@ -80,6 +92,6 @@ print(bpmGT)
 sigGT.displaySpectrum()
 
 
-
+ """
 
 

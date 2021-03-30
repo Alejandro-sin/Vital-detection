@@ -21,13 +21,7 @@
 
 * Organizar manejo de rutas relativas. ¿Como manejarlas en función de esta /data?
 
-* Necesito que después de la captura del video, me lo suba a un repositorio o algo para poder consumirlo leugo.
-
-
-
-
-
-
+* Necesito que después de la captura del video, me lo suba a un repositorio o algo para poder consumirlo luego.
 
 * Sobre clases y objetos posibles para mejorar el streamlit:
 
@@ -78,6 +72,11 @@ dataset = SAMPLE(videodataDIR="/home/mafe/Descargas/id1/alex/alex_resting/", BVP
 __________________________________________________________________________________________________
 
 
+
+IDEAS
+
+
+* csv from 
 
 
 PREGUNTAS:
