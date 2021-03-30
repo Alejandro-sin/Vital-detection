@@ -19,6 +19,7 @@
 
 * En el drag and Drop organizar lso formatos que recibe y que rechaza.
 
+* Organizar manejo de rutas relativas. ¿Como manejarlas en función de esta /data?
 
 * Sobre clases y objetos posibles para mejorar el streamlit:
 
@@ -35,6 +36,33 @@ video_capture: El método de video_cap
 close_cap: Cerrar la captura del frame que se abre
 take_picture: Tomar una foto.
 __________________________________________________________________________________________________
+
+
+* Sobre el archivo pyvhr:
+
+__________________________________________________________________________________________________
+
+
+'''
+Como  montar la función. Est
+¿Como un bloque entero? o Montarlo por partes para las debidas optimizaciones?
+¿Montarlo como clases y objetos par luego servirse del los métodos?
+
+
+
+Monto función por chunk?
+
+¿Transformo los chunks de código a funciones y returns? Por lo que cada función retorna algo pueden ser los outputs que ve el médico?
+
+Es decir hay lineas que no tienen uso... o si?
+
+print("\nShow video cropped faces, crop size:", video.cropSize)
+video.showVideo()
+
+
+'''
+__________________________________________________________________________________________________
+
 
 
 

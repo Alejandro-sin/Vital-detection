@@ -20,11 +20,6 @@ st.set_page_config(
 
 
 
-
-
-
-
-
 st.title("Vitals-detection")
 #st.sidebar.selectbox("Selections", options['Heart Rate'])
 st.write(
@@ -42,26 +37,6 @@ def record():
 
 
 
-
-
-# CONTAINER IMAGE
-
-image_displayer, data_displayer = st.beta_columns(2)
-
-with image_displayer:
-    st.image('./data/image.png')
-
-
-
-with data_displayer:
-    data_from_vhr =np.random.randn(10,1)
-    data_displayer.write(data_from_vhr)
-
-
-
-
-
-
 ## SIDE BAR
 st.sidebar.write(
     '''
@@ -74,7 +49,7 @@ st.sidebar.write(
 
 
 ## MENU CONSTRUCTION
-menu = ["Home","Detect vitals","Upload Files", "Demo File","FAQ"]
+menu = ["Home","Detect vitals","Upload Files","Results", "Demo File","FAQ"]
 choice = st.sidebar.selectbox("",menu)
 if choice =="Upload Files":
     st.subheader("Upload Video")
@@ -109,6 +84,20 @@ elif choice == "FAQ":
     expander = st.beta_expander("FAQ")
     expander.write("Here you could put in some long explanations about the algorithm pychv")
 
+
+elif choice == "Results":
+
+# CONTAINER IMAGE
+    image_displayer, data_displayer = st.beta_columns(2)
+
+    with image_displayer:
+        st.image('./data/image.png')
+
+
+
+    with data_displayer:
+        data_from_vhr =np.random.randn(10,1)
+        data_displayer.write(data_from_vhr)
 
 
 

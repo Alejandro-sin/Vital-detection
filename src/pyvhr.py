@@ -6,12 +6,16 @@ from pyVHR.methods.chrom import CHROM
 from pyVHR.analysis.testsuite import TestSuite, TestResult
 from pyVHR.datasets.sample import SAMPLE
 from pyVHR.datasets.dataset import Dataset
+from pyVHR.utils.errors import getErrors, printErrors, displayErrors
+
+
+
 
 
 
 
 # -- Video object
-videoFilename = "/home/mafe/Descargas/id1/alex/alex_resting/cv_camera_sensor_stream_handler.avi"
+videoFilename = "./data/record.avi"
 video = Video(videoFilename)
 
 # -- extract faces
@@ -44,11 +48,17 @@ m = CHROM(**params)
 
 # -- invoke the method
 bpmES, timesES = m.runOffline(**params)
-bpmES
+# bpmES
 
 
 # -- dataset object
-dataset = SAMPLE(videodataDIR="/home/mafe/Descargas/id1/alex/alex_resting/", BVPdataDIR="/home/mafe/Descargas/id1/alex/alex_resting/")
+dataset = SAMPLE(videodataDIR="./data/record.avi", BVPdataDIR="./data/record.avi")  # ¿Que carpeta necesito?
+""" 
+# -- dataset object
+dataset = SAMPLE(videodataDIR="/home/mafe/Descargas/id1/alex/alex_resting/", BVPdataDIR="/home/mafe/Descargas/id1/alex/alex_resting/")  # ¿Que carpeta necesito? """
+
+
+
 
 # -- ground-truth (GT) signal
 idx = 0   # index of signal within the list dataset.videoFilenames
@@ -67,13 +77,12 @@ winSizeGT = 7
 bpmGT, timesGT = sigGT.getBPM(winSizeGT)
 
 
-from pyVHR.utils.errors import getErrors, printErrors, displayErrors
 
 # -- error metrics
 RMSE, MAE, MAX, PCC = getErrors(bpmES, bpmGT, timesES, timesGT)
 printErrors(RMSE, MAE, MAX, PCC)
 displayErrors(bpmES, bpmGT, timesES, timesGT)
-bpmGT
+#bpmGT
 
 
 
