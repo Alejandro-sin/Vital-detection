@@ -10,8 +10,9 @@ st.title("Vitals-detection")
 #st.sidebar.selectbox("Selections", options['Heart Rate'])
 st.write(
     '''
-    This demo its for...
-    To start just navigate in the menu context from the left
+    This application is aimed at measuring vital signs using signal processing and techniques such as photoplestimography and deep learning.
+
+    _____________________________________________
 
     ''')
 
@@ -56,14 +57,16 @@ elif choice =="Demo File":
 
     '''
 elif choice == "Detect vitals":
+    st.subheader("Select the vital signs you want to measure")
+    st.write("_____________________________________________")
     pr = st.checkbox("Pulse Rate")
-    oxs = st.checkbox("Oxygen Saturation")
-    bd = st.checkbox("Blood Glucose")
+    rr= st.checkbox("Respiration rate")
+    bd = st.checkbox("Body temperature")
     if pr:
         st.write("To start the process of measuring HR just click the button below and wait for the magic")
         record()
 
-    if oxs or bd:
+    if rr or bd:
         st.write("This feature its not avaible yet")
 
 elif choice == "FAQ":
