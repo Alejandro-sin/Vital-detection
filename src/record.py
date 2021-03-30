@@ -22,18 +22,26 @@ take_picture: Tomar una foto.
 '''
 
 
-def take_picture():
+def take_picture(frame):
     '''
     This function taks a pictue whn the video captures ends.
     '''
-    pass
+    cv2.imwrite(frame)
+    return "{} written!".format(img_name)
+
 
 
 
 
 
 def video_cap():
+    
+    #Frames vars to control video capture
     capture_duration = 11
+    frame_time = 10  # time of each frame in ms
+
+
+    # video capture
     capture = cv2.VideoCapture(0)
     # Encoding
     fourcc = cv2.VideoWriter_fourcc(*'XVID')
@@ -46,8 +54,9 @@ def video_cap():
         ret, frame = capture.read()
         gray = cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY)
         out.write(frame)
+        cv2.imwrite('./data/image.png',frame)
         cv2.imshow('Vide Capture', gray)
-        if cv2.waitKey(1) & 0xFF == ord('q'):
+        if cv2.waitKey(frame_time) & 0xFF == ord('q'):
             break
 
     capture.release()

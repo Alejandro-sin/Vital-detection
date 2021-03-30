@@ -19,7 +19,26 @@ st.write(
 
 def record():
     if st.button('Record'):
-        video_cap(),
+        video_cap()
+
+
+
+
+
+
+# CONTAINER CHART 
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
