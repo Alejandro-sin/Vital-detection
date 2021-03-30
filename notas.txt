@@ -61,6 +61,12 @@ video.showVideo()
 
 
 '''
+
+"""
+# -- dataset object
+dataset = SAMPLE(videodataDIR="/home/mafe/Descargas/id1/alex/alex_resting/", BVPdataDIR="/home/mafe/Descargas/id1/alex/alex_resting/")  # ¿Que carpeta necesito? """
+
+
 __________________________________________________________________________________________________
 
 

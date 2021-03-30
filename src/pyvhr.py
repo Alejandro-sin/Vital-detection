@@ -9,11 +9,6 @@ from pyVHR.datasets.dataset import Dataset
 from pyVHR.utils.errors import getErrors, printErrors, displayErrors
 
 
-
-
-
-
-
 # -- Video object
 videoFilename = "./data/record.avi"
 video = Video(videoFilename)
@@ -50,15 +45,8 @@ m = CHROM(**params)
 bpmES, timesES = m.runOffline(**params)
 # bpmES
 
-
 # -- dataset object
 dataset = SAMPLE(videodataDIR="./data/record.avi", BVPdataDIR="./data/record.avi")  # ¿Que carpeta necesito?
-""" 
-# -- dataset object
-dataset = SAMPLE(videodataDIR="/home/mafe/Descargas/id1/alex/alex_resting/", BVPdataDIR="/home/mafe/Descargas/id1/alex/alex_resting/")  # ¿Que carpeta necesito? """
-
-
-
 
 # -- ground-truth (GT) signal
 idx = 0   # index of signal within the list dataset.videoFilenames
@@ -75,7 +63,6 @@ sigGT.plotBPMPeaks()
 # -- compute BPM GT
 winSizeGT = 7
 bpmGT, timesGT = sigGT.getBPM(winSizeGT)
-
 
 
 # -- error metrics
