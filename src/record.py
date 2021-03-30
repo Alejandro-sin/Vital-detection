@@ -5,7 +5,7 @@ import time
 
 
 def video_cap():
-
+    
     #Frames vars to control video capture
     capture_duration = 11
     frame_time = 10  # time of each frame in ms
