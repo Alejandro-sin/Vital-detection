@@ -96,7 +96,7 @@ elif choice == "Results":
 
 
     with data_displayer:
-        data_from_vhr =np.random.randn(10,1)
+        data_from_vhr = np.random.randn(10,1)
         data_displayer.write(data_from_vhr)
 
 
