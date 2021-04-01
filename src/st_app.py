@@ -86,13 +86,13 @@ elif choice == "FAQ":
 
 
 elif choice == "Results":
+    
 
 # CONTAINER IMAGE
     image_displayer, data_displayer = st.beta_columns(2)
 
     with image_displayer:
         st.image('./data/image.png')
-
 
 
     with data_displayer:
