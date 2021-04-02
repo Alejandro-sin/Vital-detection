@@ -7,6 +7,7 @@ from record import video_cap
 
 
 
+
 ## CONFIG STREAMLIT
 
 st.set_page_config(
@@ -34,6 +35,12 @@ st.write(
 def record():
     if st.button('Record'):
         video_cap()
+        status_v= st.progress(0)
+        for percent in range(10):
+            time.sleep(0.2)
+        st.success('You can check your vitals at "Results"!')
+        
+
 
 
 
@@ -45,6 +52,17 @@ st.sidebar.write(
 
     '''
 )
+
+
+
+
+#sample
+hr_array = [65.0390625 , 64.16015625 ,65.91796875 ,65.91796875, 65.0390625 , 65.91796875,
+        67.67578125 ,66.796875  , 64.16015625, 61.5234375 , 64.16015625, 67.67578125,
+        65.91796875 ,63.28125 ,  60.64453125 ,61.5234375,  64.16015625, 65.91796875,
+        64.16015625 ,61.5234375 , 59.765625  ]
+
+hr_result = np.mean(hr_array)
 
 
 
@@ -74,7 +92,7 @@ elif choice == "Detect vitals":
     rr= st.checkbox("Respiration rate")
     bd = st.checkbox("Body temperature")
     if pr:
-        st.write("To start the process of measuring HR just click the button below and wait for the magic")
+        st.write("To start the heart rate measurement process, simply click the button below and wait 10 seconds to record the magic")
         record()
 
     if rr or bd:
@@ -96,9 +114,7 @@ elif choice == "Results":
 
 
     with data_displayer:
-        data_from_vhr = np.random.randn(10,1)
-        data_displayer.write(data_from_vhr)
-
-
+        data_displayer.write("HR-bpm")
+        data_displayer.write(hr_result)
 
 

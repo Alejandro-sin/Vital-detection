@@ -18,9 +18,7 @@ def load_data():
     # -- extract faces  ¿Se necesita esto como argumento de otra función?
     return video
 
-
-
-
+video =load_data()
 
 """ 
 print(type(video))
@@ -61,6 +59,11 @@ def pos():
 
 
 
+def run(): 
+    load_data()
+    chrom()
+
+
 
 if __name__=='__main__':
-    pass
+    run()
