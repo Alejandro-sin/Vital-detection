@@ -18,7 +18,6 @@ def load_data():
     # -- extract faces  ¿Se necesita esto como argumento de otra función?
     return video
 
-video =load_data()
 
 
 def adapt():
@@ -32,6 +31,9 @@ def fix():
 
 
 # -----------------------------TUNING
+
+video = load_data()
+# Aquí falta definir cuales son los parámetros de entrada para "params" en skin_fix
 params = {"video": video, "verb":0, "ROImask":"skin_adapt", "skinAdapt":0.2}
 
 def chrom():
@@ -41,15 +43,12 @@ def chrom():
     bpmES, timesES = m.runOffline(**params)
     return print(bpmES)
 
-chrom()
-
 
 def pos():
     m = POS(**params)
 # -- invoke the method
     bpmES, timesES = m.runOffline(**params)
     return print(bpmES)
-
 
 
 def run(): 
@@ -60,3 +59,4 @@ def run():
 
 if __name__=='__main__':
     run()
+    
