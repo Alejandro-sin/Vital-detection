@@ -3,7 +3,7 @@ import pandas as pd
 import cv2
 import time
 from pathlib import Path
-import module_vhr as vhr
+# import module_vhr as vhr
 
 
 def video_cap():
@@ -18,7 +18,7 @@ def video_cap():
     # Encoding
     fourcc = cv2.VideoWriter_fourcc(*'XVID')
     # Write and save
-    out = cv2.VideoWriter(r'.data/record.avi',fourcc, 20.0, (640,480))
+    out = cv2.VideoWriter('data/record.avi',fourcc, 20.0, (640,480))
     start_time = time.time()
 
     # Time interval
@@ -26,7 +26,7 @@ def video_cap():
         ret, frame = capture.read()
         gray = cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY)
         out.write(frame)
-        cv2.imwrite('./data/image.png',frame)
+        cv2.imwrite('/data/image.png',frame)
         cv2.imshow('Vide Capture', gray)
         if cv2.waitKey(frame_time) & 0xFF == ord('q'):
             break
