@@ -2,6 +2,7 @@ import numpy as np
 import pandas as pd
 import cv2
 import time
+from pathlib import Path
 
 
 def video_cap():
@@ -16,7 +17,7 @@ def video_cap():
     # Encoding
     fourcc = cv2.VideoWriter_fourcc(*'XVID')
     # Write and save
-    out = cv2.VideoWriter('./data/record.avi',fourcc, 20.0, (640,480))
+    out = cv2.VideoWriter('.data/record.avi',fourcc, 20.0, (640,480))
     start_time = time.time()
 
     # Time interval

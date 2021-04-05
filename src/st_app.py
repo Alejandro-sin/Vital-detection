@@ -2,7 +2,8 @@ import streamlit as st
 import pandas as pd
 import numpy as np
 import time
-from record import video_cap
+import record as r
+# import vh Trae sin problemas la librería
 
 
 
@@ -34,11 +35,12 @@ st.write(
 
 def record():
     if st.button('Record'):
-        video_cap()
+        r.video_cap()
         status_v= st.progress(0)
         for percent in range(10):
             time.sleep(0.2)
         st.success('You can check your vitals at "Results"!')
+        # vh_data = vh
         
 
 
@@ -54,8 +56,6 @@ st.sidebar.write(
 )
 
 
-
-
 #sample
 hr_array = [65.0390625 , 64.16015625 ,65.91796875 ,65.91796875, 65.0390625 , 65.91796875,
         67.67578125 ,66.796875  , 64.16015625, 61.5234375 , 64.16015625, 67.67578125,
@@ -63,7 +63,6 @@ hr_array = [65.0390625 , 64.16015625 ,65.91796875 ,65.91796875, 65.0390625 , 65.
         64.16015625 ,61.5234375 , 59.765625  ]
 
 hr_result = np.mean(hr_array)
-
 
 
 ## MENU CONSTRUCTION

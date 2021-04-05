@@ -20,18 +20,11 @@ def load_data():
 
 video =load_data()
 
-""" 
-print(type(video))
-video.printROIInfo() 
-print("▬"*30)
-  """
 
 def adapt():
     video.setMask(typeROI='skin_adapt',skinThresh_adapt=0.2)
     return video.printROIInfo()
 
-
-""" print("▬"*30) """
 
 def fix():
     video.setMask(typeROI='skin_fix',skinThresh_fix=[30, 50])
