@@ -11,63 +11,39 @@
 
 * Quiero que cuando seleccione un signo vital me desaparezca el resto de cosas. y me renderice no mas la imagen o el video embebido.
 
-* Quiero poder eliminar el return none del record buttom. Done
-
-* Poner un botoncito de feedback del tiempo.
-
-* Poner un mensaje que se puede cancelar la grabación con la letra q. Poner también a funcionar el scape.
 
 * En el drag and Drop organizar lso formatos que recibe y que rechaza.
+** Falta manejar el archivo, qué hago luego de cargarlo?
 
 * Organizar manejo de rutas relativas. ¿Como manejarlas en función de esta /data?
+** Ver sobre pathlib para administrar cosas en todos lso sitemas operativos.
 
 * Necesito que después de la captura del video, me lo suba a un repositorio o algo para poder consumirlo luego.
 
 * Sobre clases y objetos posibles para mejorar el streamlit:
 
-________________________________________________________________________________________________
-Revisar si constuyo la clase con métodos para  modularizar
-las opciones dependientes de cv2 como métodos unificados en la clase "Caps"
-
-class Caps():
-    def __init__(self, video_capture,  close_cap, take_picture):
-        pass
-
-
-video_capture: El método de video_cap
-close_cap: Cerrar la captura del frame que se abre
-take_picture: Tomar una foto.
-__________________________________________________________________________________________________
+_________________________________________________________________________________________
+____________________________________________________
 
 
 * Sobre el archivo pyvhr:
 
-__________________________________________________________________________________________________
-
+_________________________________________________________________________________________
 
 '''
-Como  montar la función. Est
-¿Como un bloque entero? o Montarlo por partes para las debidas optimizaciones?
-¿Montarlo como clases y objetos par luego servirse del los métodos?
+
+¿Como un bloque entero? 
+¿Montarlo por partes para las debidas optimizaciones?
 
 
 
-Monto función por chunk?
 
-¿Transformo los chunks de código a funciones y returns? Por lo que cada función retorna algo pueden ser los outputs que ve el médico?
 
-Es decir hay lineas que no tienen uso... o si?
-
-print("\nShow video cropped faces, crop size:", video.cropSize)
-video.showVideo()
 
 
 '''
 
 """
-# -- dataset object
-dataset = SAMPLE(videodataDIR="/home/mafe/Descargas/id1/alex/alex_resting/", BVPdataDIR="/home/mafe/Descargas/id1/alex/alex_resting/")  # ¿Que carpeta necesito? """
-
 
 __________________________________________________________________________________________________
 

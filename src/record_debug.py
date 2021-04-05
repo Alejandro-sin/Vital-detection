@@ -38,10 +38,5 @@ def video_cap():
 
 
 
-
-
-
-
-
 if __name__ == '__main__':
     video_cap()
