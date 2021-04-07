@@ -137,3 +137,8 @@ dmypy.json
 # Data files
 data/
 
+# Heroku Files
+heroku/
+
+# Garbage Files
+garbage_files/
