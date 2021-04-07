@@ -76,7 +76,7 @@ def main():
     elif choice == "Results":
         image_displayer, data_displayer = st.beta_columns(2)
         with image_displayer:
-            st.video('./data/data_test.mp4')
+            st.video('./data/record.avi')
 
         with data_displayer:
             data_displayer.write("HR-bpm")
