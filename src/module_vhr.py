@@ -37,11 +37,15 @@ video = load_data()
 params = {"video": video, "verb":0, "ROImask":"skin_adapt", "skinAdapt":0.2}
 
 def chrom():
+    # Test
+    video = load_data()
+    params = {"video": video, "verb":0, "ROImask":"skin_adapt", "skinAdapt":0.2}
 # -- define some params in the form of dict (those in the cfg file) 
     # -- invoke the method
     m = CHROM(**params)
     bpmES, timesES = m.runOffline(**params)
-    return print(bpmES)
+    mean_results = str(np.mean(bpmES))
+    return mean_results
 
 
 def pos():
@@ -54,7 +58,7 @@ def pos():
 def run(): 
     load_data()
     chrom()
-
+    
 
 
 if __name__=='__main__':
