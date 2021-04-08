@@ -45,7 +45,7 @@ def chrom():
     m = CHROM(**params)
     bpmES, timesES = m.runOffline(**params)
     mean_results = str(np.mean(bpmES))
-    return mean_results
+    return mean_results, print(mean_results)
 
 
 def pos():
