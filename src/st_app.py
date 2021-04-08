@@ -2,7 +2,7 @@ import streamlit as st
 import pandas as pd
 import numpy as np
 import time
-import record as r
+#import record as r
 import module_vhr as vhr
 
 
