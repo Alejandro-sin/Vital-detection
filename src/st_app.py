@@ -3,6 +3,7 @@ import pandas as pd
 import numpy as np
 import time
 import record as r
+import module_vhr as vhr
 
 
 ## CONFIG STREAMLIT
@@ -75,12 +76,13 @@ def main():
     elif choice == "Results":
         image_displayer, data_displayer = st.beta_columns(2)
         with image_displayer:
-            st.image('./data/image.png')
+            st.video('./data/record.avi')
 
         with data_displayer:
             data_displayer.write("HR-bpm")
-            # Load Results
-            # data_displayer.write(hr_result)
+            results = vhr.chrom()
+            data_displayer.write( results)
+            
         
 
 def record():
