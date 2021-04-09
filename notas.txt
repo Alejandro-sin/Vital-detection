@@ -37,7 +37,10 @@ ________________________________________________________________________________
 
 
 
-
+""" video_file = open('./data/record.mp4', 'rb')
+            video_bytes = video_file.read()
+            image_displayer.video(video_bytes)  """
+            
 
 
 

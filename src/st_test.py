@@ -3,7 +3,8 @@ import pandas as pd
 import numpy as np
 import time
 import record as r
-#import module_vhr as vhr
+import module_vhr as vhr
+import cv2
 
 
 ## CONFIG STREAMLIT
@@ -76,9 +77,12 @@ def main():
     elif choice == "Results":
         image_displayer, data_displayer = st.beta_columns(2)
         with image_displayer:
-            video_file = open('./data/record.avi', 'rb')
-            video_bytes = video_file.read()
-            st.video(video_bytes)
+            image = cv2.imread('./data/image.png')
+            st.image(image, caption='Results')
+
+
+           
+
 
         with data_displayer:
             data_displayer.write("HR-bpm")

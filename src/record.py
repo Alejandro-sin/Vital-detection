@@ -13,13 +13,12 @@ def video_cap():
     capture_duration = 11
     frame_time = 20  # time of each frame in ms
 
-
     # video capture
     capture = cv2.VideoCapture(0)
     # Encoding
-    fourcc = cv2.VideoWriter_fourcc(*'XVID')
+    fourcc = cv2.VideoWriter_fourcc(*'DIVX')
     # Write and save
-    out = cv2.VideoWriter('./data/record.avi',fourcc, 20.0, (640,480))
+    out = cv2.VideoWriter('./data/record.mp4',fourcc, 20.0, (640,480))
     start_time = time.time()
 
     # Time interval
