@@ -142,5 +142,3 @@ heroku/
 
 # Garbage Files
 garbage_files/
-
-requirements_one.txt
