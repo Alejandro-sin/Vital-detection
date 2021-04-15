@@ -16,7 +16,7 @@ def video_cap():
     # video capture
     capture = cv2.VideoCapture(0)
     # Encoding
-    fourcc = cv2.VideoWriter_fourcc(*'DIVX')
+    fourcc = cv2.VideoWriter_fourcc(*'MP4V')
     # Write and save
     out = cv2.VideoWriter('./data/record.mp4',fourcc, 20.0, (640,480))
     start_time = time.time()

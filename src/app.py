@@ -70,7 +70,7 @@ def main():
         if pr:
             st.write("To start the heart rate measurement process, simply click the button below and wait 10 seconds to record the magic")
             record()
-            asyncio.run(analize())
+            results = asyncio.run(analize())
 
         #if rr or bd:
             #st.write("This feature its not avaible yet")
@@ -89,13 +89,13 @@ def main():
 
         with data_displayer:
             data_displayer.write("HR-bpm")
-            data_displayer.write( results)
+            data_displayer.write(results)
 
 
 async def analize():
-    await asyncio.sleep(13)
-    results = vhr.chrom()
-    return results
+    await asyncio.sleep(2)
+    analysis = vhr.chrom()
+    return analysis
 
 
 
@@ -103,8 +103,8 @@ def record():
     if st.button('Record'):
         r.video_cap()
         status_v = st.progress(0)
-        for percent in range(10):
-            time.sleep(0.2)
+        for percent in range(100):
+            time.sleep(30)
         st.success('You can check your vitals at "Results"!')
 
         

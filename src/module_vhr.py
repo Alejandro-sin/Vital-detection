@@ -12,7 +12,8 @@ from pyVHR.utils.errors import getErrors, printErrors, displayErrors
 #-------------------- HANDLE DATA
 
 def load_data():
-    videoFilename = "./data/data_sample.mp4"
+    #videoFilename = "./data/data_sample.mp4"
+    videoFilename = "./data/record.avi"
     video = Video(videoFilename)
     video.getCroppedFaces(detector='mtcnn', extractor='skvideo')
     # -- extract faces  ¿Se necesita esto como argumento de otra función?
